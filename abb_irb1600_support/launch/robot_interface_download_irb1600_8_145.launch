@@ -18,3 +18,32 @@
     <arg name="J23_coupled" value="$(arg J23_coupled)" />
   </include>
 </launch>
+
+
+
+<!--
+  Manipulator specific version of abb_driver's 'robot_interface.launch'.
+
+  Defaults provided for IRB 1600:
+   - J23_coupled = true
+
+  Usage:
+    robot_interface_download_irb1600.launch robot_ip:=<value>
+-->
+<!-- <launch>
+  <arg name="robot_ip" doc="IP of the controller" />
+
+  <rosparam command="load" file="$(find abb_irb1600_support)/config/joint_names_irb1600_8_145.yaml" />
+  <!-- This is the part that will be replaced -->
+  <!-- <include file="$(find abb_driver)/launch/robot_interface.launch">
+    <arg name="robot_ip" value="$(arg robot_ip)" />
+    <arg name="J23_coupled" value="$(arg J23_coupled)" />
+  </include> -->
+
+  <include file="$(find abb_robot_bringup_examples)/launch/custom_moveit_setup.launch">
+    <arg name="robot_ip" value="$(arg robot_ip)" />
+    <!-- <arg name="J23_coupled" value="$(arg J23_coupled)" /> -->
+  </include>
+
+
+</launch> -->

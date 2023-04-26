@@ -26,7 +26,11 @@
 
   <!-- run the robot simulator and action interface nodes -->
   <group if="$(arg sim)">
-    <include file="$(find industrial_robot_simulator)/launch/robot_interface_simulator.launch" />
+    <!-- <include file="$(find industrial_robot_simulator)/launch/robot_interface_simulator.launch" /> -->
+    <include file="$(find abb_irb1600_support)/launch/robot_simulation_interface_irb1600_6_12.launch" />
+    <!-- <include file="$(find abb_irb1600_support)/launch/robot_interface_download_irb1600_6_12.launch" > -->
+      <!-- <arg name="robot_ip" value="$(arg robot_ip)"/> -->
+    <!-- </include> -->
   </group>
 
   <!-- run the "real robot" interface nodes -->

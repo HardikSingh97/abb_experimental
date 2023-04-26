@@ -1,3 +1,12 @@
 <launch>
-  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find abb_irb1600_support)/urdf/irb1600_8_145.xacro'" />
+  <!-- 
+  <param name="robot_description" command="$(find xacro)/xacro \-\-inorder '$(find abb_irb1600_support)/urdf/irb1600_8_145.xacro'" />
+   -->
+
+  <!-- <param name="robot_description" command="$(find xacro)/xacro '$(find abb_irb1600_support)/urdf/irb1600_8_145.xacro'" /> -->
+
+  <arg name="model" default="$(find abb_irb1600_support)/urdf/irb1600_8_145.xacro"/>
+
+  <param name="robot_description" textfile="$(arg model)" />
+
 </launch>
