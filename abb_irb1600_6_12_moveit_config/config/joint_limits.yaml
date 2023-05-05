@@ -33,5 +33,5 @@ joint_limits:
     has_acceleration_limits: false
     max_acceleration: 0
 
-# default_velocity_scaling_factor: 1.0
-# default_accelration_scaling_factor: 1.0
+default_velocity_scaling_factor: 1.0
+default_accelration_scaling_factor: 1.0
